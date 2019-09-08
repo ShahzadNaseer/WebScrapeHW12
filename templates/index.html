@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Web Scraping - Mars Data</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
     <div class="container">
@@ -15,12 +15,12 @@
             <div class="jumbotron text-center" style="background-image: url({{ mars_data.feature_image }}); background-size: 50%; height: 50%;">
                
             <!--  <h1>Mars.. </h1> <p style="color:red;">Mars..</p>  -->
-            <h1 style="color: red;" "font-size:80px;">Mars!</h1>
+            <h1 style="color: red;" "font-size:100px;">Mars!</h1>
             
-            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Mars Data!</a></p>
+            <p><a class="btn btn-primary btn-md" href="/scrape" role="button">Scrape Mars Data!</a></p>
         </div>
         <div class="row" style="padding-bottom: 30px;">
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-7 col-md-12">
                 <div class="box">
                     <h4 class="title">Mars latest news and weather</h4>
                     <hr>
@@ -29,7 +29,7 @@
                     <h6>{{ mars_data.temprature }}</h6>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-5 col-md-12">
             <!-- RHS Box -->
             <div class="box">
               <h4 class="title">Mars Facts</h4>
@@ -51,6 +51,50 @@
                 </div>
             </div>
         </div>
+
+        <!-- Mars Hemispheres -->
+        <h3 style="padding-top: 100px; margin-top: 30px; text-align: center;">Mars Hemispheres Images</h3>
+        <div class="card-deck">
+            <hr>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card text-white bg-dark" style="margin: 30px;">
+                            <img class="card-img-top" src="{{ mars_data.hemi_igames.0.hemi_img_url }}" />
+                            <div class="card-body">
+                                <p class="card-text">{{ mars_data.hemi_igames.0.title }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card text-white bg-dark" style="margin: 30px;">
+                            <img class="card-img-top" src="{{ mars_data.hemi_igames.1.hemi_img_url }}" />
+                            <div class="card-body">
+                                <p class="card-text">{{ mars_data.hemi_igames.1.title }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card text-white bg-dark" style="margin: 30px;">
+                            <img class="card-img-top" src="{{ mars_data.hemi_igames.2.hemi_img_url }}" />
+                            <div class="card-body">
+                                <p class="card-text">{{ mars_data.hemi_igames.2.title }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card text-white bg-dark" style="margin: 30px;">
+                            <img class="card-img-top" src="{{ mars_data.hemi_igames.3.hemi_img_url }}" />
+                            <div class="card-body">
+                                <p class="card-text">{{ mars_data.hemi_igames.3.title }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Close main container -->        
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
