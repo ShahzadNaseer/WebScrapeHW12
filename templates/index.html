@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Scraping - Mars Data</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <!-- <img src="{{ mars_data.feature_image }}" class="vizualization rounded float-left" alt="Mars Image">  -->
+            <div class="jumbotron text-center" style="background-image: url({{ mars_data.feature_image }}); background-size: 50%; height: 50%;">
+               
+            <!--  <h1>Mars.. </h1> <p style="color:red;">Mars..</p>  -->
+            <h1 style="color: red;" "font-size:80px;">Mars!</h1>
+            
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Mars Data!</a></p>
+        </div>
+        <div class="row" style="padding-bottom: 30px;">
+            <div class="col-lg-6 col-md-12">
+                <div class="box">
+                    <h4 class="title">Mars latest news and weather</h4>
+                    <hr>
+                    <h5>{{ mars_data.title }}</h5>
+                    <h6>{{ mars_data.text }}</h6> <br/><br/>
+                    <h6>{{ mars_data.temprature }}</h6>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+            <!-- RHS Box -->
+            <div class="box">
+              <h4 class="title">Mars Facts</h4>
+              <hr>
+                <div class="container">
+                    <!--<h3>Mars Facts</h3> -->
+                    
+                    <div style="max-width: 450px; max-height: 150px; font-size: 15px; margin-bottom: 65px;">
+                        {{ mars_data.fact_html|safe }}
+                    </div>
+
+                    <!--  <div class="row" style="padding-bottom: 30px;">
+                        <div class="col-8">
+                            <div w3-include-html={{ mars_data.fact_html|safe}}></div>   -->
+                            <!-- <h5>Facts: {{ mars_data.fact_html }}</h5>  -->
+                     <!--  <   </div>
+                    </div>  -->
+      
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+</body>
+</html>
